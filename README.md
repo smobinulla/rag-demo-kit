@@ -1,11 +1,24 @@
-# EKS Production Kit — Free Demo
+# EKS Production Kit — Free RAG Demo
 
-A free, runnable taste of the **EKS Production Kit**: a production-grade toolkit
-for running real workloads on Amazon EKS.
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+![GitHub stars](https://img.shields.io/github/stars/smobinulla/rag-demo-kit?style=social)
+![Run: docker compose](https://img.shields.io/badge/run-docker%20compose-2496ED?logo=docker&logoColor=white)
 
-This public repo ships one thing you can run in five minutes on your laptop — a
-genuinely useful **RAG (Retrieval-Augmented Generation) service** — so you can
-judge the code quality before buying the full kit.
+**Upload a document, ask questions, get cited answers — a production-minded RAG
+service you can run in 5 minutes with `docker compose`.** Hybrid retrieval
+(pgvector + BM25, fused via Reciprocal Rank Fusion), incremental indexing, and
+bring-your-own-LLM answers (Claude / OpenAI / Gemini / Bedrock). Embeddings run
+locally, so it works with **no API key at all**.
+
+> ⭐ **Star the repo** to follow the full production kit — Terraform for EKS,
+> hardened Helm chart, multi-env, drift/import — **coming soon**.
+
+<!-- Demo: record a ~15s screen capture (upload a doc → ask → cited answer),
+     save it as docs/demo.gif, then uncomment the line below. -->
+<!-- ![RAG demo](docs/demo.gif) -->
+
+This is the **free demo** from the EKS Production Kit — genuinely useful on its
+own, and a taste of the code quality in the full kit.
 
 ## ▶️ Quick start (no cloud, no API key)
 
@@ -31,7 +44,7 @@ in **any** LLM key you already have (Claude, OpenAI, Gemini, Bedrock) — see
 
 ## 🚀 Upgrade to the full kit
 
-The paid **EKS Production Kit** takes this from "runs on my laptop" to
+The full **EKS Production Kit** takes this from "runs on my laptop" to
 "running securely on real EKS," and is what most teams actually need:
 
 | | Free demo (this repo) | Full kit (paid) |
@@ -45,7 +58,9 @@ The paid **EKS Production Kit** takes this from "runs on my laptop" to
 | Guided **deploy / destroy** wizard (bash + PowerShell) | | ✅ |
 | Runbooks, testing guide, and updates | | ✅ |
 
-**→ Get the full kit: [add your Gumroad / product link here]**
+**The full kit is in the works.** ⭐ **Star / watch this repo** to be notified
+when it launches — or [open an issue](https://github.com/smobinulla/rag-demo-kit/issues)
+to tell me what you'd want included.
 
 ## License
 
