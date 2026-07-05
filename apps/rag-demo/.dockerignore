@@ -1,0 +1,19 @@
+# Keep the build context small, reproducible, and free of secrets/artifacts.
+__pycache__/
+*.pyc
+*.pyo
+
+# Never bake real keys into the image; the example is fine to keep out too.
+.env
+.env.*
+
+# Local-only artifacts that shouldn't influence the build.
+models/
+*.tar
+.git
+.gitignore
+
+# Docs/manifests aren't needed inside the image.
+README.md
+k8s/
+docker-compose.yml

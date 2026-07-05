@@ -1,0 +1,14 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+psycopg[binary]==3.2.3
+psycopg-pool==3.2.4
+pgvector==0.3.6
+fastembed==0.5.1
+pypdf==5.1.0
+rank-bm25==0.2.2
+numpy==2.2.1
+# Unified LLM gateway for the OPTIONAL answer step — supports Anthropic/Claude,
+# OpenAI, Google Gemini, AWS Bedrock, etc. via one call. Pure-Python (no torch),
+# only invoked when ANSWER_MODEL is set. Bring your own provider key.
+litellm>=1.52,<2

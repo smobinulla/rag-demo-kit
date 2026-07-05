@@ -1,0 +1,27 @@
+EKS Production Kit — overview
+
+The EKS Production Kit is a Helm chart and Terraform blueprint for running
+production-grade workloads on Amazon EKS. Its guiding principle is that every
+default should be safe for production out of the box.
+
+Zero-downtime deployments. The chart uses a RollingUpdate strategy with
+maxUnavailable set to 0, so a new pod must pass its readiness probe before an
+old pod is terminated. A preStop hook sleeps for 15 seconds to give the AWS
+load balancer time to deregister the pod before it receives SIGTERM.
+
+Security posture. Pods run as a non-root user with a read-only root filesystem,
+all Linux capabilities dropped, and the RuntimeDefault seccomp profile. These
+defaults satisfy the Kubernetes Pod Security Standard "restricted" profile.
+
+Autoscaling and availability. A HorizontalPodAutoscaler scales replicas on CPU
+utilization with a 300-second scale-down stabilization window. A
+PodDisruptionBudget keeps at least one replica available during node drains and
+Karpenter consolidation.
+
+Environments. The kit ships three environments — dev, sit, and prod — each with
+isolated Terraform state and a non-overlapping VPC CIDR: dev uses 10.10.0.0/16
+with two availability zones, sit uses 10.20.0.0/16 with three zones, and prod
+uses 10.30.0.0/16 with one NAT gateway per zone for high availability.
+
+IRSA. The Terraform module creates an OIDC provider so pods can assume IAM roles
+via IAM Roles for Service Accounts, wired through a single values key.
