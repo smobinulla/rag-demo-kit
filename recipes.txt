@@ -1,2 +1,7 @@
 Aloo-curry
 Paneer-masala
+pasta
+soup
+cookies
+chicken-biryani
+mutton-biryani
